@@ -8,7 +8,8 @@
 import vuetify from './vuetify'
 import router from '@/router'
 import DataTable from 'datatables.net-vue3'
-import DataTablesCore from 'datatables.net'
+import DataTablesCore from 'datatables.net-bs5'
+import 'datatables.net-plugins/api/processing().mjs'
 
 DataTable.use(DataTablesCore)
 

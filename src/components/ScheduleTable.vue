@@ -138,9 +138,8 @@ function getSchedule(){
                     let deleteButton = document.createElement('button');
                     deleteButton.textContent = 'Vymazať';
                     deleteButton.addEventListener('click', () => {
-                        axios.delete('https://node67.webte.fei.stuba.sk/zadanie2/api/schedule.php/activity', { data: { id: activity.id } })
-                            .then(response => {
-                                console.log(response)
+                        axios.delete('https://node67.webte.fei.stuba.sk/zadanie2/api/api.php/activity', { data: { id: activity.id } })
+                            .then(() => {
                                 getSchedule()
                             })
                             .catch(error => {
@@ -182,9 +181,7 @@ function sendForm(){
         formData.type = formSelectValue.value
     }
     axios.post('https://node67.webte.fei.stuba.sk/zadanie2/api/api.php/schedule', formData)
-        .then(response => {
-            console.log(response)
-            hideForm()
+        .then(() => {
             getSchedule()
         })
         .catch(error => {
@@ -208,9 +205,7 @@ function updateAcitity(){
         return
     }
     axios.put('https://node67.webte.fei.stuba.sk/zadanie2/api/api.php/activity', editedItem)
-        .then(response => {
-            console.log(response)
-            hideEditForm()
+        .then(() => {
             getSchedule()
         })
         .catch(error => {
